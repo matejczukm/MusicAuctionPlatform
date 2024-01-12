@@ -1,0 +1,20 @@
+
+{% extends 'listings/main.html' %}
+{% load static %}
+
+{%  block content %}
+<link rel='stylesheet' type="text/css" href="{% static '/css/product.css' %}">
+<div class="product-container">
+    <img class="product-image" src="product-image.jpg" alt="Product Image">
+    <div class="product-info">
+        <div class="product-price">$99.99</div>
+        <div class="product-condition">Condition: New</div>
+        <div class="product-location">Seller Location: City, Country</div>
+        <div class="product-description">
+            <p>This is a detailed product description. It can include information about the features, specifications, and any other relevant details about the product.</p>
+            <p>Feel free to customize this template according to your product's details.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

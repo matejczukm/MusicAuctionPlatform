@@ -1,0 +1,34 @@
+@import "main.css";
+
+.product-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.product-condition,
+.product-location {
+    margin-top: 10px;
+}
+
+.product-description {
+    line-height: 1.6;
+}
