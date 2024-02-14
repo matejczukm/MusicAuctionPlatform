@@ -1,0 +1,43 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+
+{% load compress %}
+{% block header %}
+    {% compress css %}
+        <link rel='stylesheet' type="text/x-scss" href="{% static 'forms.scss' %}">
+    {% endcompress %}
+
+{% endblock %}
+{% block content %}
+    <div class="post-form-container">
+        <h2>Login</h2>
+        <form method="POST" action="" class="post-form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div>
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <ul class="errorlist" style="text-align: left">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                        <p class="helptext" style="text-align: left">{{ field.help_text }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <!-- Submit button -->
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

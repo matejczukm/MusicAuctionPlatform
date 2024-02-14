@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tytuł strony</title>
-</head>
-<body>
+{% extends "listings\main.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block header%}
+   <link rel='stylesheet' type="text/css" href="{% static '/css/main.css' %}">
+
+{% endblock %}

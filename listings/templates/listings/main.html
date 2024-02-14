@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block header %}
+    {% endblock %}
+    <script src="{% static 'js/show_hide.js' %}"></script>
+    <script src="{% static 'js/autocomplete.js' %}" defer></script>
+
+</head>
+<body>
+<nav class="navbar">
+
+    <ul class="navbar-left">
+        <li><a href="#" onclick="showHide()">search</a></li>
+        {% if user.is_authenticated %}
+            <li><a href={% url 'accounts:seller_profile' user.username %}>my listings</a></li>
+        {% else %}
+            <li><a href={% url 'accounts:login' %}>my listings</a></li>
+
+        {% endif %}
+
+        <li><a href={% url 'listings:add_listing' %}>add listing</a></li>
+    </ul>
+
+    <div class="centered-image">
+        <a href='/listings'><header>For The Record.</header></a> </div>
+
+    <ul class="navbar-right">
+        {% if user.is_authenticated %}
+            <li><a href="/accounts/logout/">logout</a></li>
+        {% else %}
+            <li><a href="/accounts/login/">login</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <li><a href="/accounts/profile">profile</a></li>
+        {% else %}
+            <li><a href="/accounts/register">signup</a></li>
+        {% endif %}
+
+
+
+    </ul>
+</nav>
+
+<div class="searchbar" id="hidden_element" style="display: none">
+    <form method="get" action="{% url 'listings:search' %}"  id="recordFilterForm">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <div class='autocomplete-container'>
+                <div class="autocomplete-input">
+                    <input type="text" id="title" name="title" autocomplete="off">
+                    <div id="titleSuggestions" class="autocomplete-suggestions"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container"><label for="artist">Artist:</label>
+            <div class='autocomplete-container'>
+                <div class="autocomplete-input">
+                    <input type="text" id="artist" name="artist" autocomplete="off">
+                    <div id="artistSuggestions" class="autocomplete-suggestions"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="input-container"><label for="country">Country:</label>
+            <div class='autocomplete-container'>
+                <div class="autocomplete-input">
+                    <input type="text" id="country" name="country" autocomplete="off">
+                    <div id="countrySuggestions" class="autocomplete-suggestions"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container"><label for="format">Format:</label>
+            <select id="format" name="format">
+                <option value="">Any</option>
+                <option value="vinyl">Vinyl</option>
+                <option value="cd">CD</option>
+                <option value="casette">Casette</option>
+            </select></div>
+
+
+        <div class="input-container"><label for="year">Year:</label>
+            <input type="number" id="year" name="year"></div>
+
+
+        <button type="submit">Search</button>
+    </form>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

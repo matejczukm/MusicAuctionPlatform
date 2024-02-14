@@ -1,34 +1,76 @@
-@import "main.css";
-
-.product-container {
-    max-width: 800px;
-    margin: 20px auto;
+@import "listings.css";
+.listing-container-2 {
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
     padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    word-break: break-all;
+    background-color: white;
+    box-sizing: border-box;
+
 }
 
-.product-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+.buy-info-container {
+    float: right;
+    background-color: #8FB5DB;
+    padding:20px;
+    text-align: center;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+    box-sizing: border-box;
+
+
 }
 
-.product-info {
-    margin-bottom: 20px;
+.buy-info-container form {
+    display: grid;
+}
+.buy-info-container form button{
+    margin: 0;
+    padding: 0;
+    height: 30px;
+}
+.image-container {
+    width: 400px; /* Set the desired width */
+    height: 400px;
 }
 
-.product-price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #007bff;
+
+.listing-price {
+
 }
 
-.product-condition,
-.product-location {
+.listing-condition,
+.listing-location {
     margin-top: 10px;
 }
 
-.product-description {
-    line-height: 1.6;
+.listing-description {
+
+    clear: both;
+    font-size: 12px;
+
+}
+.listing-description h4{
+    font-size: 23px;
+    margin-top:5px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.img_column{
+  padding: 0;
+  width: 400px
+}
+.listing-image{
+    float: left;
+    margin-right: 20px;
+
+}
+.listing-container-2 a{
+  text-decoration: none;
+  color: black;
+}
+.listing-container-2 a:visited{
+  color: black;
 }

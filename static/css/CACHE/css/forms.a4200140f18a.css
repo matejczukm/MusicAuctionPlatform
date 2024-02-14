@@ -1,0 +1,30 @@
+@import url(/static/css/main.css);
+/* line 3, static/css/forms.scss */
+.post-form-container {
+  margin-left: 30vw;
+  margin-right: 30vw;
+  background-color: white;
+  padding: 20px; }
+  /* line 10, static/css/forms.scss */
+  .post-form-container .post-form {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    padding: 8px; }
+    /* line 16, static/css/forms.scss */
+    .post-form-container .post-form form div {
+      margin: auto;
+      width: 100%; }
+    /* line 21, static/css/forms.scss */
+    .post-form-container .post-form div label {
+      padding: 8px;
+      width: 100%; }
+    /* line 26, static/css/forms.scss */
+    .post-form-container .post-form div input {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box; }
+    /* line 32, static/css/forms.scss */
+    .post-form-container .post-form div button {
+      width: 100%;
+      padding: 8px; }

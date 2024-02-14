@@ -1,32 +1,11 @@
-
 {% extends 'listings/main.html' %}
 {% load static %}
 
-
-
-
-{% block content %}
+{% block header %}
+    <title>Listings</title>
     <link rel='stylesheet' type="text/css" href="{% static '/css/listings.css' %}">
-    {% for i in list %}
-        <table class="table">
-            <tr>
-                <td class="img_column" rowspan="3">
-                    {% if i.image %}
-                        <div class="image-container">
-                            <img src="{{ i.image.url }}" alt="imag">
-                        </div>
-
-                    {% else %}
-                        <p>No image available</p>
-                    {% endif %}
-                </td>
-                <td>{{ i.name }}</td>
-            </tr>
-            <tr><td>{{ i.buy_now_price }}</td></tr>
-            <tr><td>{{ i.OwnerID.screen_name }}</td></tr>
-        </table>
-        <br>
-    {% endfor %}
-
-
+    <script src="{% static '/js/autocomplete.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+{% include 'listings/listings_filtering.html' %}
 {% endblock %}

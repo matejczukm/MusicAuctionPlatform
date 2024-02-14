@@ -1,0 +1,36 @@
+
+{% extends "listings/main.html" %}
+{% load static %}
+{% load compress %}
+{% block header %}
+    <title>Add Record</title>
+    {% compress css %}
+    <link rel='stylesheet' type="text/x-scss" href="{% static '/css/forms.scss' %}">
+    {% endcompress %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="post-form-container">
+        <h2>Add Record:</h2>
+
+
+        <form id="addRecordForm" enctype="multipart/form-data" method="post" class="post-form">
+            {% csrf_token %}
+
+            {% for field in record_form %}
+
+                <div>
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                </div>
+            {% endfor %}
+        <div>
+                <button type="submit">Add Record</button>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

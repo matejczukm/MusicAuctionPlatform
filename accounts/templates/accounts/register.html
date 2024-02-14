@@ -1,0 +1,46 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% load compress %}
+
+{% block header %}
+    {% compress css %}
+    <link rel='stylesheet' type="text/x-scss" href="{% static 'forms.scss' %}">
+    {% endcompress %}
+{% endblock %}
+{% block content %}
+    <div class=post-form-container>
+        <h2>Register</h2>
+
+        <form method="POST" action="" class="post-form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div>
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <ul class="errorlist" >
+                            {% for error in field.errors %}
+                                <li style="text-align: left">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                        <p class="helptext" style="text-align: left">{{ field.help_text }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <div>
+                <button type="submit">Register</button>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+{% endblock %}

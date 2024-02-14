@@ -1,0 +1,37 @@
+@import url(/static/main.css?62578133526b);
+/* line 3, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+.post-form-container {
+  margin-left: 30vw;
+  margin-right: 30vw;
+  background-color: white;
+  padding: 20px;
+  grid-row-gap: 5px; }
+  /* line 11, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+  .post-form-container .post-form {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center; }
+    /* line 19, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+    .post-form-container .post-form form div {
+      margin: auto;
+      width: 100%; }
+    /* line 24, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+    .post-form-container .post-form div label {
+      padding: 8px;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 2px;
+      box-sizing: border-box; }
+    /* line 33, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+    .post-form-container .post-form div input {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 5px; }
+    /* line 42, c:/users/mmate/pycharmprojects/wwwproject/static/css/forms.scss */
+    .post-form-container .post-form div button {
+      width: 100%;
+      padding: 8px; }

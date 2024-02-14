@@ -1,0 +1,41 @@
+<div class="listing-container">
+        {% for i in listings %}
+            {% if i.active %}
+                <div class='listing'>
+                    <a href="{% url 'listings:listing' i.id %}">
+                        <div class="img-column">
+
+                            {% if i.record.image %}
+                                <div class="image-container">
+                                    <img src="{{ i.record.image.url }}" alt="image">
+                                </div>
+                            {% else %}
+                                <p>No image available</p>
+                            {% endif %}
+                        </div>
+                    </a>
+
+
+                    <div class="info-column">
+                        <a href="{% url 'listings:listing' i.id %}"><h2>{{ i.record.title }}</h2></a>
+                        <a href='/listings/search/?artist={{ i.record.artist.name }}'><h4>
+                            By {{ i.record.artist.name }}</h4></a>
+                        {% if i.medium == 'cd' %}
+                            <p>{{ i.medium|upper }}</p>
+                        {% else %}
+                            <p>{{ i.medium|capfirst }}</p>
+
+                        {% endif %}
+                        {% if i.buy_now %}
+                            <p class="buy-now-price">Buy now: {{ i.buy_now_price }}
+                        {% endif %}
+                    </div>
+
+                </div>
+            {% endif %}
+
+
+
+            <br>
+        {% endfor %}
+    </div>

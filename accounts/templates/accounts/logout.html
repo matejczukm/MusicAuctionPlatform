@@ -1,0 +1,15 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% load compress %}
+{% block header %}
+    {% compress css %}
+        <link rel='stylesheet' type="text/x-scss" href="{% static '/css/forms.scss' %}">
+    {% endcompress %}
+{% endblock %}
+{% block content %}
+    <div class="post-form-container">
+    <h2>logged out</h2>
+    <br>
+    <a href="/accounts/login">login again</a>
+    </div>
+{% endblock %}

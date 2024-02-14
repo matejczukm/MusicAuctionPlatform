@@ -1,0 +1,32 @@
+@import url(/static/css/main.css);
+/* line 3, static/css/forms.scss */
+.post-form-container {
+  margin-left: 30vw;
+  margin-right: 30vw;
+  background-color: white;
+  padding: 20px; }
+  /* line 10, static/css/forms.scss */
+  .post-form-container .post-form {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    padding: 8px; }
+    /* line 16, static/css/forms.scss */
+    .post-form-container .post-form form div {
+      margin: auto;
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 2px; }
+    /* line 23, static/css/forms.scss */
+    .post-form-container .post-form div label {
+      padding: 8px;
+      width: 100%; }
+    /* line 29, static/css/forms.scss */
+    .post-form-container .post-form div input {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box; }
+    /* line 35, static/css/forms.scss */
+    .post-form-container .post-form div button {
+      width: 100%;
+      padding: 8px; }

@@ -1,0 +1,45 @@
+{% extends "listings/main.html" %}
+{% load static %}
+{% load compress %}
+
+{% block header %}
+    <title>Add listing</title>
+    {% compress css %}
+        <link rel='stylesheet' type="text/x-scss" href="{% static '/css/forms.scss' %}">
+    {% endcompress %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="post-form-container">
+    <h2>Add Listing:</h2>
+        <form id="addListingForm" method="post" class="post-form">
+            {% csrf_token %}
+
+            {% for field in listing_form %}
+
+                <div>
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <ul class="errorlist">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                        <p class="helptext">{{ field.help_text }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <div>
+                <button type="submit">Add Listing</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

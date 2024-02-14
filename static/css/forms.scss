@@ -1,0 +1,48 @@
+@import "main.css";
+
+.post-form-container {
+  margin-left: 30vw;
+  margin-right: 30vw;
+  background-color: white;
+  padding: 20px;
+  grid-row-gap: 5px;
+  // Add any additional styles you want for the login form container
+
+  .post-form {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+
+    form div {
+      margin: auto;
+      width: 100%;
+    }
+
+    div label {
+      padding: 8px;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      box-sizing: border-box;
+
+    }
+
+    div input {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 5px;
+
+
+    }
+
+    div button {
+      width: 100%;
+      padding: 8px;
+    }
+  }
+}

@@ -1,11 +1,10 @@
-body {
-  background-color: blue;
-  margin-left: 100px;
-  margin-right: 100px;
-}
+
+@import "main.css";
+
+
 .image-container {
-  width: 200px; /* Set the desired width */
-  height: 200px; /* Set the desired height */
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -13,6 +12,55 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: black;
-  border-bottom-width: thick
+
+}
+
+.img_column{
+  width: 300px;
+  margin-top: 2px;
+  padding: 10px;
+  float:left;
+}
+.listing-container{
+  margin-left: 15vw;
+  margin-right: 15vw;
+  width: 70vw;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  box-sizing: border-box;
+
+}
+
+.info-column{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0px;
+  word-break: break-all
+}
+
+.listing{
+  width: 48%;
+  display: flex;
+  margin: 10px;
+  height:300px;
+
+}
+
+.listing-container a{
+  text-decoration: none;
+  color: black;
+}
+.listing-container a:visited{
+  color: black;
+}
+.listing-name{
+  padding: 0;
+  margin: 0;
+}
+.seller_info{
+  margin-left: 15vw;
+  color: white;
 }

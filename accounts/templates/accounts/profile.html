@@ -1,0 +1,34 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block header %}
+    <title>{{ user }}'s profile</title>
+        <link rel='stylesheet' type="text/css" href="{% static '/css/profile.css' %}">
+
+{% endblock %}
+{% block content %}
+    <div class="orders-container">
+        <p>Hello, {{ user.username }}</p>
+        <h1>Your orders:</h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Item</th>
+                <th>Status</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.ListingID.record.title }} [{{ order.ListingID.medium }}]</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.price }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
